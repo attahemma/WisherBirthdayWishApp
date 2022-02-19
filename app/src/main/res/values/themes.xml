@@ -1,9 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.WisherBirthdayWishApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.WisherBirthdayWishApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/grey_100</item>
+        <item name="colorPrimaryVariant">@color/yellow_300</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -12,5 +12,24 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+    </style>
+
+
+    <style name="BoldFont" parent="Theme.WisherBirthdayWishApp">
+        <item name="fontFamily">@font/source_sans_pro_bold</item>
+        <item name="android:textSize">40sp</item>
+
+    </style>
+
+    <style name="RegularFont" parent="Theme.WisherBirthdayWishApp">
+        <item name="fontFamily">@font/source_sans_pro_regular</item>
+        <item name="android:textSize">32sp</item>
+
+    </style>
+
+    <style name="ButtonFont" parent="Theme.WisherBirthdayWishApp">
+        <item name="fontFamily">@font/source_sans_pro_semi_bold</item>
+        <item name="android:textSize">18sp</item>
+
     </style>
 </resources>

@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">WisherBirthdayWishApp</string>
+    <string name="happy_birthday">HAPPY\nBIRTHDAY</string>
+    <string name="let_s">Let\'s</string>
+    <string name="start">Start</string>
+    <string name="sign_in_as_a_guest">Sign In As A Guest</string>
+    <string name="hello">hello</string>
 </resources>
