@@ -1,24 +1,56 @@
 package com.itech.wisherbirthdaywishapp.views.ui.onboardingFragment
 
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.AsyncListDiffer
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.itech.wisherbirthdaywishapp.R
+import com.itech.wisherbirthdaywishapp.databinding.OnboardingviewpagerLayoutBinding
 
 class OnboardingFragmentViewPagerAdapter():RecyclerView.Adapter<OnboardingFragmentViewPagerAdapter.OnboardingViewHolder>() {
-    private lateinit var listOfItems:List<ViewPagerDataModel>
-
     inner class OnboardingViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
+        private val binding = OnboardingviewpagerLayoutBinding.bind(itemView)
+        private val image = binding.onboardingImageView
+
+        fun bind(item:ViewPagerDataModel){
+            image.setImageResource(item.onBoardingImage)
+        }
     }
 
+    private val differCallBack = object : DiffUtil.ItemCallback<ViewPagerDataModel>(){
+        override fun areItemsTheSame(
+            oldItem: ViewPagerDataModel,
+            newItem: ViewPagerDataModel
+        ): Boolean {
+            return oldItem.onBoardingImage == newItem.onBoardingImage
+        }
+
+        override fun areContentsTheSame(
+            oldItem: ViewPagerDataModel,
+            newItem: ViewPagerDataModel
+        ): Boolean {
+            return oldItem == newItem
+        }
+
+    }
+    val differ = AsyncListDiffer(this,differCallBack)
+    fun submitList(list: List<ViewPagerDataModel>) = differ.submitList(list)
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OnboardingViewHolder {
-        TODO("Not yet implemented")
+        val view =
+            LayoutInflater.from(parent.context)
+                .inflate(R.layout.onboardingviewpager_layout, parent, false)
+        return OnboardingViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: OnboardingViewHolder, position: Int) {
-        TODO("Not yet implemented")
+            val item = differ.currentList[position]
+            holder.bind(item)
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return differ.currentList.size
     }
 }

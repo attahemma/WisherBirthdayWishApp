@@ -27,22 +27,22 @@
             android:id="@+id/btnNext"
             android:layout_margin="20dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
             android:text="@string/next"
             android:textAllCaps="false"
             android:background="@drawable/small_button_background"
-        app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         />
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnPrevious"
             android:layout_margin="20dp"
             android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
             android:text="@string/previous"
             android:textAllCaps="false"
             android:background="@drawable/small_button_background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>
