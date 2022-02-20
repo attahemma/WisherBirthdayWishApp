@@ -21,7 +21,19 @@
 
     </style>
 
+    <style name="BoldFontLand" parent="Theme.WisherBirthdayWishApp">
+        <item name="fontFamily">@font/source_sans_pro_bold</item>
+        <item name="android:textSize">60sp</item>
+
+    </style>
+
     <style name="RegularFont" parent="Theme.WisherBirthdayWishApp">
+        <item name="fontFamily">@font/source_sans_pro_regular</item>
+        <item name="android:textSize">32sp</item>
+
+    </style>
+
+    <style name="RegularFontLand" parent="Theme.WisherBirthdayWishApp">
         <item name="fontFamily">@font/source_sans_pro_regular</item>
         <item name="android:textSize">32sp</item>
 
@@ -30,6 +42,12 @@
     <style name="ButtonFont" parent="Theme.WisherBirthdayWishApp">
         <item name="fontFamily">@font/source_sans_pro_semi_bold</item>
         <item name="android:textSize">18sp</item>
+
+    </style>
+
+    <style name="ButtonFontLand" parent="Theme.WisherBirthdayWishApp">
+        <item name="fontFamily">@font/source_sans_pro_semi_bold</item>
+        <item name="android:textSize">16sp</item>
 
     </style>
 </resources>

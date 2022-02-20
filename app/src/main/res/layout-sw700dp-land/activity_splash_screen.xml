@@ -7,15 +7,15 @@
     android:background="@color/yellow_300"
     tools:context=".views.SplashScreenActivity">
 
-
     <TextView
-        style="@style/ButtonFont"
+        style="@style/ButtonFontLand"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginEnd="20dp"
         android:clickable="true"
         android:text="@string/sign_in_as_a_guest"
+        android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,11 +23,11 @@
         android:id="@+id/ivSplashScreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="260dp"
         android:padding="20dp"
         android:src="@mipmap/ic_decoration"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.294"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,73 +36,68 @@
         style="@style/BoldFont"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="196dp"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="0dp"
         android:gravity="center_vertical"
-        android:lineSpacingExtra="18dp"
+        android:lineSpacingExtra="58dp"
         android:padding="18dp"
         android:text="@string/happy_birthday"
         android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:textSize="128sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivSplashScreen"
         tools:ignore="RtlCompat" />
 
     <TextView
         android:id="@+id/intro_text"
-        android:layout_width="0dp"
+        style="@style/RegularFontLand"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="400dp"
-        android:padding="10dp"
+        android:layout_marginEnd="100dp"
+        android:padding="40dp"
         android:paddingEnd="5dp"
-        style="@style/RegularFont"
         android:text="@string/hello"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ivSplashScreen" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSignIn"
-        style="@style/ButtonFont"
+        style="@style/ButtonFontLand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginBottom="64dp"
+        android:layout_marginBottom="200dp"
+        android:layout_marginStart="100dp"
         android:background="@drawable/rectangular_greyed"
         android:backgroundTint="@android:color/transparent"
         android:padding="10dp"
-        android:paddingStart="@dimen/button_side_padding"
-        android:paddingEnd="@dimen/button_side_padding"
+        android:paddingStart="@dimen/button_side_padding_land"
+        android:paddingEnd="@dimen/button_side_padding_land"
         android:text="Sign In"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnSignUp"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/tvSplashScreen" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSignUp"
-        style="@style/ButtonFont"
+        style="@style/ButtonFontLand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="64dp"
         android:background="@drawable/rectangular_transparent"
         android:backgroundTint="@android:color/transparent"
         android:padding="10dp"
-        android:paddingStart="@dimen/button_side_padding"
-        android:paddingEnd="@dimen/button_side_padding"
+        android:paddingStart="@dimen/button_side_padding_land"
+        android:paddingEnd="@dimen/button_side_padding_land"
+        android:layout_marginBottom="200dp"
+        android:layout_marginEnd="50dp"
         android:text="Sign Up"
         android:textAllCaps="false"
         android:textColor="@color/grey_100"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btnSignIn" />
-
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
