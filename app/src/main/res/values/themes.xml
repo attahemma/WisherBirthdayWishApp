@@ -15,6 +15,7 @@
     </style>
 
 
+
     <style name="BoldFont" parent="Theme.WisherBirthdayWishApp">
         <item name="fontFamily">@font/source_sans_pro_bold</item>
         <item name="android:textSize">40sp</item>
@@ -50,4 +51,5 @@
         <item name="android:textSize">16sp</item>
 
     </style>
+>>>>>>> 1a04dd4 (worked on splashscreen landscape mode)
 </resources>
