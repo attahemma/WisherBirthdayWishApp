@@ -28,8 +28,14 @@ class OnboardingFragment : Fragment(R.layout.fragment_onboarding) {
 
     private fun setUpOnboardingItem() {
         listOfOnBoardingItems = listOf(
-            ViewPagerDataModel(R.drawable.onboard_1),
-            ViewPagerDataModel(R.drawable.onboard_2)
+            ViewPagerDataModel(
+                R.drawable.onboard_1,
+            "Wish a Friend",
+                "Keep your friends closer to your heart by sending love and wishes"),
+            ViewPagerDataModel(
+                R.drawable.onboard_2,
+            "Be Reminded",
+            "Get notified even before its the day. Do not miss out on a friend's birthday")
         )
         adapter = OnboardingFragmentViewPagerAdapter()
         adapter.submitList(listOfOnBoardingItems)

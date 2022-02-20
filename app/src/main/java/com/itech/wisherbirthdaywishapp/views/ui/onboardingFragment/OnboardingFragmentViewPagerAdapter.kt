@@ -13,9 +13,13 @@ class OnboardingFragmentViewPagerAdapter():RecyclerView.Adapter<OnboardingFragme
     inner class OnboardingViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
         private val binding = OnboardingviewpagerLayoutBinding.bind(itemView)
         private val image = binding.onboardingImageView
+        private val title = binding.tvTitle
+        private val description = binding.tvDescription
 
         fun bind(item:ViewPagerDataModel){
             image.setImageResource(item.onBoardingImage)
+            item.Title.also { title.text = it }
+            item.Description.also { description.text = it }
         }
     }
 
