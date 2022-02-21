@@ -10,9 +10,12 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
+
 public class signUP extends Fragment {
-  TextView signUp, fillInCredentials, emailText, fullNameText, passwordText, confirmPasswordText;
-  EditText email, fullName, password, confirmPassword;
+  TextView signUp, fillInCredentials;
+  TextInputEditText email, fullName, password, confirmPassword;
     public signUP() {
 
     }
@@ -33,11 +36,6 @@ public class signUP extends Fragment {
 
         signUp = view.findViewById(R.id.signUpText);
         fillInCredentials = view.findViewById(R.id.fillInCredentials);
-        emailText = view.findViewById(R.id.EmailText);
-        fullNameText = view.findViewById(R.id.FullNameText);
-        passwordText = view.findViewById(R.id.PasswordText);
-        confirmPasswordText = view.findViewById(R.id.ConfirmPasswordText);
-
         email= view.findViewById(R.id.EnterEmail);
         fullName = view.findViewById(R.id.EnterFullname);
         password = view.findViewById(R.id.Enterpassword);
