@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -16,6 +17,7 @@ import com.google.android.material.textfield.TextInputLayout;
 public class signUP extends Fragment {
   TextView signUp, fillInCredentials;
   TextInputEditText email, fullName, password, confirmPassword;
+  Button register;
     public signUP() {
 
     }
@@ -40,7 +42,7 @@ public class signUP extends Fragment {
         fullName = view.findViewById(R.id.EnterFullname);
         password = view.findViewById(R.id.Enterpassword);
         confirmPassword = view.findViewById(R.id.EnterConfirmPassword);
-
+         register = view.findViewById(R.id.Register);
         return view;
    }
 }
