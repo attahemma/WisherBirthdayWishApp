@@ -4,13 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".signUP">
-
+    tools:context=".SignIn">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign Up"
-        android:id="@+id/signUpText"
+        android:text="Sign In"
+        android:id="@+id/signInText"
         android:textStyle="bold"
         android:textSize="16sp"
         android:textColor="@color/design_default_color_primary_dark"
@@ -23,10 +22,10 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/signUpText"
+        android:layout_below="@id/signInText"
         android:layout_marginStart="15dp"
         android:id="@+id/fillInCredentials"
-        android:text="Please fill in your credentials to create a new account"
+        android:text="Please fill in your credentials to sign in to your account"
         android:layout_marginEnd="15dp"
         android:textColor="@color/design_default_color_primary_dark"
         />
@@ -54,26 +53,6 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/FullNameText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Full Name"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_below= "@id/EmailText"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/EnterFullname"
-            android:layout_margin="5dp"
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/PasswordText"
@@ -83,7 +62,7 @@
         android:layout_marginEnd="15dp"
         android:layout_marginTop="5dp"
         android:hint="Password"
-        android:layout_below= "@id/FullNameText"
+        android:layout_below= "@id/EmailText"
         app:passwordToggleEnabled="true"
         app:passwordToggleDrawable="@drawable/ic_password"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
@@ -98,41 +77,20 @@
             />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/ConfirmPasswordText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginTop="5dp"
-        android:hint="Confirm Password"
-        android:layout_below= "@id/PasswordText"
-        app:passwordToggleEnabled="true"
-        app:passwordToggleDrawable="@drawable/ic_password"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/EnterConfirmPassword"
-            android:imeOptions="actionNext"
-            android:inputType="text"
-            android:layout_margin="5dp"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
-
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ConfirmPasswordText"
+        android:layout_below="@+id/PasswordText"
         android:id="@+id/Register"
         android:layout_marginStart="15dp"
         android:padding="15dp"
         android:textSize="16sp"
-        android:text="Register"
+        android:text="Login"
         android:textAllCaps="false"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="15dp"/>
+
+
 </RelativeLayout>
