@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/SONY/AndroidStudioProjects/WisherBirthdayWishApp/app/src/main/res/drawable/show_password.xml" value="0.2115" />
+        <entry key="..\:/Users/SONY/AndroidStudioProjects/WisherBirthdayWishApp/app/src/main/res/drawable/sign_up_design.xml" value="0.2115" />
+        <entry key="..\:/Users/SONY/AndroidStudioProjects/WisherBirthdayWishApp/app/src/main/res/layout/fragment_sign_u_p.xml" value="0.33" />
         <entry key="..\:/Users/Smart Dell/AndroidStudioProjects/WisherBirthdayWishApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.22760416666666666" />
       </map>
     </option>
