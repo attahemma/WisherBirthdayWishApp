@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/h/AndroidStudioProjects/WisherBirthdayWishApp/app/src/main/res/drawable/rectangular_greyed.xml" value="0.231" />
+        <entry key="..\:/Users/h/AndroidStudioProjects/WisherBirthdayWishApp/app/src/main/res/drawable/rectangular_transparent.xml" value="0.231" />
+        <entry key="..\:/Users/h/AndroidStudioProjects/WisherBirthdayWishApp/app/src/main/res/drawable/splash_screen_gradient.xml" value="0.1" />
+        <entry key="..\:/Users/h/AndroidStudioProjects/WisherBirthdayWishApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.33" />
+        <entry key="..\:/Users/h/AndroidStudioProjects/WisherBirthdayWishApp/app/src/main/res/layout/fragment_onboarding.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/h/AndroidStudioProjects/WisherBirthdayWishApp/app/src/main/res/mipmap-anydpi-v26/ic_flower.xml" value="0.108" />
         <entry key="..\:/Users/johnson.oyesina/StudioProjects/WisherBirthdayWishApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/Users/johnson.oyesina/StudioProjects/WisherBirthdayWishApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/johnson.oyesina/StudioProjects/WisherBirthdayWishApp/app/src/main/res/drawable/selected_background.xml" value="0.1" />
