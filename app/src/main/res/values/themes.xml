@@ -13,4 +13,21 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="rectangle_image">
+        <item name="cornerSize">10%</item>
+    </style>
+
+    <style name="CurvedTopCard" parent="Widget.MaterialComponents.CardView">
+        <item name="cornerSizeTopLeft">10%</item>
+        <item name="cornerSizeTopRight">10%</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+    <style name="ImageCurvedCard" parent="Widget.MaterialComponents.CardView">
+        <item name="cornerSizeTopRight">60dp</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="cardElevation">10dp</item>
+    </style>
+    <style name="calendar_bg_color">
+        <item name="background">@drawable/calendar_bg</item>
+    </style>
 </resources>
