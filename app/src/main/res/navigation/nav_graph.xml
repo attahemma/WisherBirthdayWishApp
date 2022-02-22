@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashScreenFragment">
+
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.itech.wisherbirthdaywishapp.views.ui.splashScreenFragment.SplashScreenFragment"
+        android:label="SplashScreenFragment" >
+        <action
+            android:id="@+id/action_splashScreenFragment_to_onboardingFragment"
+            app:destination="@id/onboardingFragment" />
+        <action
+            android:id="@+id/action_splashScreenFragment_to_welcomeScreenFragment"
+            app:destination="@id/welcomeScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onboardingFragment"
+        android:name="com.itech.wisherbirthdaywishapp.views.ui.onboardingFragment.OnboardingFragment"
+        android:label="fragment_onboarding"
+        tools:layout="@layout/fragment_onboarding" >
+        <action
+            android:id="@+id/action_onboardingFragment_to_welcomeScreenFragment"
+            app:destination="@id/welcomeScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeScreenFragment"
+        android:name="com.itech.wisherbirthdaywishapp.views.ui.welcomeScreenFragment.WelcomeScreenFragment"
+        android:label="WelcomeScreenFragment" >
+        <action
+            android:id="@+id/action_welcomeScreenFragment_to_signIn"
+            app:destination="@id/signIn" />
+        <action
+            android:id="@+id/action_welcomeScreenFragment_to_signUP"
+            app:destination="@id/signUP" />
+    </fragment>
+    <fragment
+        android:id="@+id/signIn"
+        android:name="com.itech.wisherbirthdaywishapp.views.ui.loginFragment.SignIn"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" />
+    <fragment
+        android:id="@+id/signUP"
+        android:name="com.itech.wisherbirthdaywishapp.views.ui.loginFragment.signUP"
+        android:label="fragment_sign_u_p"
+        tools:layout="@layout/fragment_sign_u_p" />
+</navigation>

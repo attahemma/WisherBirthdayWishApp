@@ -1,9 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.WisherBirthdayWishApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.WisherBirthdayWishApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+
+        <item name="colorPrimary">#6666CC</item>
+        <item name="colorPrimaryVariant">#6666CC</item>
+
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -12,5 +14,49 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="android:fontFamily">@font/poppins_regular</item>
+
+    </style>
+
+    <style name="ButtonFontRegular">
+        <item name="fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+
+    <style name="ButtonFontBold">
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+
+    <style name="HeaderFont">
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">48sp</item>
+    </style>
+
+
+    <style name="rectangle_image">
+        <item name="cornerSize">10%</item>
+    </style>
+
+
+
+    <style name="CurvedTopCard" parent="Widget.MaterialComponents.CardView">
+        <item name="cornerSizeTopLeft">10%</item>
+        <item name="cornerSizeTopRight">10%</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+
+
+    <style name="ImageCurvedCard" parent="Widget.MaterialComponents.CardView">
+        <item name="cornerSizeTopRight">60dp</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="cardElevation">10dp</item>
+    </style>
+
+
+    <style name="calendar_bg_color">
+        <item name="background">@drawable/calendar_bg</item>
     </style>
 </resources>
