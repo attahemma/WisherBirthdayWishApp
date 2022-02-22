@@ -1,4 +1,4 @@
-package com.itech.wisherbirthdaywishapp.views
+package com.itech.wisherbirthdaywishapp.views.ui.friendprofilefragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -23,7 +23,12 @@ class FriendProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        binding.addBirthDateBtn.setOnClickListener {
+            DatePickerDialogFragment().show(
+                childFragmentManager,
+                ""
+            )
+        }
     }
 
     override fun onDestroy() {
