@@ -25,5 +25,22 @@
     <fragment
         android:id="@+id/welcomeScreenFragment"
         android:name="com.itech.wisherbirthdaywishapp.views.ui.welcomeScreenFragment.WelcomeScreenFragment"
-        android:label="WelcomeScreenFragment" />
+        android:label="WelcomeScreenFragment" >
+        <action
+            android:id="@+id/action_welcomeScreenFragment_to_signIn"
+            app:destination="@id/signIn" />
+        <action
+            android:id="@+id/action_welcomeScreenFragment_to_signUP"
+            app:destination="@id/signUP" />
+    </fragment>
+    <fragment
+        android:id="@+id/signIn"
+        android:name="com.itech.wisherbirthdaywishapp.views.ui.loginFragment.SignIn"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" />
+    <fragment
+        android:id="@+id/signUP"
+        android:name="com.itech.wisherbirthdaywishapp.views.ui.loginFragment.signUP"
+        android:label="fragment_sign_u_p"
+        tools:layout="@layout/fragment_sign_u_p" />
 </navigation>

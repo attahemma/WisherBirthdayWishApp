@@ -9,6 +9,7 @@ import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.itech.wisherbirthdaywishapp.R
@@ -56,7 +57,7 @@ class OnboardingFragment : Fragment(R.layout.fragment_onboarding) {
                 onBoardingVp.currentItem +=1
 
             }else{
-                navigateToLoginFragment()
+                navigateToWelcomeFragment()
             }
         }
         binding.btnPrevious.setOnClickListener {
@@ -66,8 +67,8 @@ class OnboardingFragment : Fragment(R.layout.fragment_onboarding) {
         }
     }
 
-    private fun navigateToLoginFragment() {
-// navigate to login fragment
+    private fun navigateToWelcomeFragment() {
+        findNavController().navigate(R.id.action_onboardingFragment_to_welcomeScreenFragment)
     }
 
     private fun setUpIndicator() {
