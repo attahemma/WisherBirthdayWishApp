@@ -1,5 +1,6 @@
 package com.itech.wisherbirthdaywishapp.views.ui.onboardingFragment
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -69,6 +70,7 @@ class OnboardingFragment : Fragment(R.layout.fragment_onboarding) {
 
     private fun navigateToWelcomeFragment() {
         findNavController().navigate(R.id.action_onboardingFragment_to_welcomeScreenFragment)
+        onBoardingFinished()
     }
 
     private fun setUpIndicator() {
@@ -94,6 +96,12 @@ class OnboardingFragment : Fragment(R.layout.fragment_onboarding) {
             }
         }
 
+    }
+    private fun onBoardingFinished() {
+        val sharedPref = requireActivity().getSharedPreferences("onboarding", Context.MODE_PRIVATE)
+        val editor = sharedPref.edit()
+        editor.putBoolean("finished",true)
+        editor.apply()
     }
 
     fun setUpCurrentIndicator(position: Int) {

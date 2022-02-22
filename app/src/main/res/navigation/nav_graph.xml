@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_splashScreenFragment_to_onboardingFragment"
             app:destination="@id/onboardingFragment" />
+        <action
+            android:id="@+id/action_splashScreenFragment_to_welcomeScreenFragment"
+            app:destination="@id/welcomeScreenFragment" />
     </fragment>
     <fragment
         android:id="@+id/onboardingFragment"
