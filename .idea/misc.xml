@@ -3,7 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Smart Dell/AndroidStudioProjects/WisherBirthdayWishApp/app/src/main/res/layout/activity_base.xml" value="0.24166666666666667" />
+        <entry key="..\:/Users/Smart Dell/AndroidStudioProjects/WisherBirthdayWishApp/app/src/main/res/layout/fragment_date_picker_dialog.xml" value="0.24166666666666667" />
+        <entry key="..\:/Users/Smart Dell/AndroidStudioProjects/WisherBirthdayWishApp/app/src/main/res/layout/fragment_friend_profile.xml" value="0.24166666666666667" />
         <entry key="..\:/Users/Smart Dell/AndroidStudioProjects/WisherBirthdayWishApp/app/src/main/res/layout/fragment_onboarding.xml" value="0.24166666666666667" />
+        <entry key="..\:/Users/Smart Dell/AndroidStudioProjects/WisherBirthdayWishApp/app/src/main/res/layout/fragment_sign_in.xml" value="0.24166666666666667" />
+        <entry key="..\:/Users/Smart Dell/AndroidStudioProjects/WisherBirthdayWishApp/app/src/main/res/layout/fragment_sign_u_p.xml" value="0.24166666666666667" />
+        <entry key="..\:/Users/Smart Dell/AndroidStudioProjects/WisherBirthdayWishApp/app/src/main/res/layout/fragment_splash_screen.xml" value="0.24166666666666667" />
+        <entry key="..\:/Users/Smart Dell/AndroidStudioProjects/WisherBirthdayWishApp/app/src/main/res/layout/fragment_welcome_screen.xml" value="0.24166666666666667" />
         <entry key="..\:/Users/Smart Dell/AndroidStudioProjects/WisherBirthdayWishApp/app/src/main/res/layout/onboardingviewpager_layout.xml" value="0.24166666666666667" />
         <entry key="..\:/Users/johnson.oyesina/StudioProjects/WisherBirthdayWishApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/Users/johnson.oyesina/StudioProjects/WisherBirthdayWishApp/app/src/main/res/drawable/back_arrow.xml" value="0.1145" />
