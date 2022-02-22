@@ -14,7 +14,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.itech.wisherbirthdaywishapp.R
 import com.itech.wisherbirthdaywishapp.databinding.FragmentOnboardingBinding
 
-class OnboardingFragment : Fragment(R.layout.fragment_onboarding) {
+class OnboardingFragment (): Fragment(R.layout.fragment_onboarding) {
     private lateinit var binding: FragmentOnboardingBinding
     private lateinit var listOfOnBoardingItems: List<ViewPagerDataModel>
     private lateinit var adapter: OnboardingFragmentViewPagerAdapter
@@ -66,7 +66,7 @@ class OnboardingFragment : Fragment(R.layout.fragment_onboarding) {
     }
 
     private fun navigateToLoginFragment() {
-// navigate to login fragment
+        // navigate to login fragment
     }
 
     private fun setUpIndicator() {
