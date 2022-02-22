@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WisherBirthdayWishApp">
         <activity
-            android:name=".views.SplashScreenActivity"
+            android:name=".views.BaseActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

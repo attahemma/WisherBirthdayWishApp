@@ -18,6 +18,7 @@ class OnboardingFragment : Fragment(R.layout.fragment_onboarding) {
     private lateinit var binding: FragmentOnboardingBinding
     private lateinit var listOfOnBoardingItems: List<ViewPagerDataModel>
     private lateinit var adapter: OnboardingFragmentViewPagerAdapter
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentOnboardingBinding.bind(view)

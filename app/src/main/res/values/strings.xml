@@ -5,4 +5,8 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
+    <string name="happy_birthday">Happy\nBirthday</string>
+    <string name="hello">hello</string>
+    <string name="sign_in_as_a_guest">Sign In As A Guest</string>
+
 </resources>
