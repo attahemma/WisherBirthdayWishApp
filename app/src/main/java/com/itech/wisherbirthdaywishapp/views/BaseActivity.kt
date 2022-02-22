@@ -4,8 +4,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.itech.wisherbirthdaywishapp.R
 import com.itech.wisherbirthdaywishapp.databinding.ActivityBaseBinding
+import com.itech.wisherbirthdaywishapp.views.utils.BackPressedListener
 
-class BaseActivity : AppCompatActivity(){
+class BaseActivity : AppCompatActivity(),BackPressedListener{
 
     private lateinit var binding: ActivityBaseBinding
 
@@ -15,6 +16,10 @@ class BaseActivity : AppCompatActivity(){
         setContentView(binding.root)
 
 
+    }
+
+    override fun onBackPressedFromFragment() {
+        finish()
     }
 
 
