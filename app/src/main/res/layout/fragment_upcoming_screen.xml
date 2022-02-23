@@ -7,13 +7,15 @@
     tools:context=".views.ui.upcomingscreen.UpcomingScreenFragment">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/upcoming_screen_rv"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scrollbars="vertical"
         tools:listitem="@layout/upcoming_screen_recycler_item"
         tools:orientation="vertical"
-        tools:itemCount="4"
+        tools:itemCount="8"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:background="#74808080"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
