@@ -1,4 +1,4 @@
-package com.itech.wisherbirthdaywishapp;
+package com.itech.wisherbirthdaywishapp.views.ui.loginFragment;
 
 import android.os.Bundle;
 
@@ -8,39 +8,42 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
+import com.itech.wisherbirthdaywishapp.R;
 
-
-public class SignIn extends Fragment {
-
-    TextView signIn, fillInCredentials;
-    TextInputEditText email, password;
-    Button login;
-    public SignIn() {
+public class signUP extends Fragment {
+  TextView signUp, fillInCredentials;
+  TextInputEditText email, fullName, password, confirmPassword;
+  Button register;
+    public signUP() {
 
     }
-
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-    }
+        }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_sign_in, container, false);
+        View view= inflater.inflate(R.layout.fragment_sign_u_p, container, false);
 
-        signIn = view.findViewById(R.id.signInText);
+        signUp = view.findViewById(R.id.signUpText);
         fillInCredentials = view.findViewById(R.id.fillInCredentials);
         email= view.findViewById(R.id.EnterEmail);
+        fullName = view.findViewById(R.id.EnterFullname);
         password = view.findViewById(R.id.Enterpassword);
-        login = view.findViewById(R.id.login);
+        confirmPassword = view.findViewById(R.id.EnterConfirmPassword);
+         register = view.findViewById(R.id.Register);
         return view;
-    }
+   }
 }
