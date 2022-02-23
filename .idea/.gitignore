@@ -1,3 +1,8 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+/compiler.xml
+/git_toolbox_prj.xml
+/gradle.xml
+/misc.xml
+/vcs.xml
