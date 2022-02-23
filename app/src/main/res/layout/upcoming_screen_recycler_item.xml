@@ -28,9 +28,11 @@
             android:id="@+id/friend_full_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
+            android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:text="@string/attah_emmanuel"
+            android:textSize="18sp"
+            android:fontFamily="@font/poppins_bold"
             android:includeFontPadding="false"
             app:layout_constraintBottom_toTopOf="@+id/calendar_icon"
             app:layout_constraintEnd_toEndOf="parent"
@@ -52,11 +54,14 @@
             android:id="@+id/friend_date_of_birth"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="@string/_02_feb"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/poppins_regular"
             android:includeFontPadding="false"
+            android:text="@string/_02_feb"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/calendar_icon"
             app:layout_constraintStart_toEndOf="@+id/calendar_icon"
-            app:layout_constraintTop_toTopOf="@+id/calendar_icon" />
+            app:layout_constraintTop_toTopOf="@+id/calendar_icon"
+            app:layout_constraintVertical_bias="1.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
