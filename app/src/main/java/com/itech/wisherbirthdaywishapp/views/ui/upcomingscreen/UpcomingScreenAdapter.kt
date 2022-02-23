@@ -5,10 +5,14 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.itech.wisherbirthdaywishapp.databinding.UpcomingScreenRecyclerItemBinding
 import com.itech.wisherbirthdaywishapp.model.UpcomingScreenModel
+import com.itech.wisherbirthdaywishapp.views.utils.UpcomingScreenClickInterface
 
-class UpcomingScreenAdapter(private val listOfFriends: MutableList<UpcomingScreenModel>) :
-    RecyclerView.Adapter<UpcomingScreenAdapter.UpcomingScreenViewHolder>() {
-    inner class UpcomingScreenViewHolder(binding: UpcomingScreenRecyclerItemBinding) :
+class UpcomingScreenAdapter(
+    private var listOfFriends: MutableList<UpcomingScreenModel>,
+    private var clickInterface: UpcomingScreenClickInterface
+) : RecyclerView.Adapter<UpcomingScreenAdapter.UpcomingScreenViewHolder>() {
+
+    class UpcomingScreenViewHolder(val binding: UpcomingScreenRecyclerItemBinding) :
         RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UpcomingScreenViewHolder {
@@ -21,10 +25,11 @@ class UpcomingScreenAdapter(private val listOfFriends: MutableList<UpcomingScree
     }
 
     override fun onBindViewHolder(holder: UpcomingScreenViewHolder, position: Int) {
-        val current = listOfFriends[position]
         with(holder) {
             with(listOfFriends[position]) {
-
+                itemView.setOnClickListener { clickInterface.clickFriendCard(position) }
+                binding.friendFullName.text = fullName
+                binding.friendDateOfBirth.text = date
             }
         }
     }
