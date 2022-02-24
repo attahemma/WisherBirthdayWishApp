@@ -8,5 +8,11 @@
     <string name="happy_birthday">Happy\nBirthday</string>
     <string name="hello">hello</string>
     <string name="sign_in_as_a_guest">Sign In As A Guest</string>
+    <string name="calendar_icon">Calendar icon</string>
+    <string name="_02_feb">02 Feb</string>
+    <string name="attah_emmanuel">Attah Emmanuel</string>
+    <string name="profile_image">Profile image</string>
+    <string name="hi_there">Hi There!</string>
+    <string name="add_a_friend">Add a friend</string>
 
 </resources>
