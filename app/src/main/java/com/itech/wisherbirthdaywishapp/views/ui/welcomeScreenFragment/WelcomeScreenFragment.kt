@@ -39,6 +39,9 @@ class WelcomeScreenFragment : Fragment(R.layout.fragment_welcome_screen) {
                 0, 5,
                 Typeface.BOLD
             )
+        binding.signInAsGuest.setOnClickListener {
+            findNavController().navigate(R.id.action_welcomeScreenFragment_to_overview)
+        }
         binding.btnSignIn.setOnClickListener {
             findNavController().navigate(R.id.action_welcomeScreenFragment_to_signIn)
         }

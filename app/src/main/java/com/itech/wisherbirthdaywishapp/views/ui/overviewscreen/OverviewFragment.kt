@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.itech.wisherbirthdaywishapp.databinding.FragmentOverviewBinding
 import com.itech.wisherbirthdaywishapp.model.UpcomingScreenModel
 import com.itech.wisherbirthdaywishapp.views.ui.upcomingscreen.UpcomingScreenAdapter
@@ -44,6 +45,7 @@ class OverviewFragment : Fragment(), UpcomingScreenClickInterface {
 
         adapter = UpcomingScreenAdapter(listOfFriends, this)
         binding.overviewScreenRv.apply {
+            layoutManager = LinearLayoutManager(context)
             adapter = adapter
             setHasFixedSize(true)
         }

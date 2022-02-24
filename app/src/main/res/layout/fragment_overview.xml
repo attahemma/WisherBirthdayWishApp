@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/grey"
     tools:context=".views.ui.overviewscreen.OverviewFragment">
 
     <View
         android:id="@+id/view"
         android:layout_width="0dp"
         android:layout_height="190dp"
-        android:background="@drawable/overview_appbar"
+        android:background="@drawable/overview_head_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,9 +48,7 @@
         android:id="@+id/overview_screen_rv"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#74808080"
         android:scrollbars="vertical"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

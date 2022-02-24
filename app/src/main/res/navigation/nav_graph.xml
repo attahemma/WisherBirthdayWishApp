@@ -35,6 +35,9 @@
         <action
             android:id="@+id/action_welcomeScreenFragment_to_signUP"
             app:destination="@id/signUP" />
+        <action
+            android:id="@+id/action_welcomeScreenFragment_to_overview"
+            app:destination="@id/overview" />
     </fragment>
     <fragment
         android:id="@+id/signIn"
@@ -46,4 +49,8 @@
         android:name="com.itech.wisherbirthdaywishapp.views.ui.loginFragment.signUP"
         android:label="fragment_sign_u_p"
         tools:layout="@layout/fragment_sign_u_p" />
+    <fragment
+        android:id="@+id/overview"
+        android:name="com.itech.wisherbirthdaywishapp.views.ui.overviewscreen.OverviewFragment"
+        tools:layout="@layout/fragment_overview" />
 </navigation>
