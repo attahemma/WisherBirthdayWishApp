@@ -9,7 +9,7 @@ import com.itech.wisherbirthdaywishapp.model.UpcomingScreenModel
 import com.itech.wisherbirthdaywishapp.views.utils.UpcomingScreenClickInterface
 
 class UpcomingScreenAdapter(
-    private var listOfFriends: MutableList<UpcomingScreenModel>,
+    private var listOfFriends: List<UpcomingScreenModel>,
     private var clickInterface: UpcomingScreenClickInterface
 ) : RecyclerView.Adapter<UpcomingScreenAdapter.UpcomingScreenViewHolder>() {
 
@@ -44,10 +44,6 @@ class UpcomingScreenAdapter(
 
             }
         }
-    }
-    fun addToList(data:UpcomingScreenModel){
-        listOfFriends.add(data)
-        notifyDataSetChanged()
     }
     override fun getItemCount() = listOfFriends.size
 }

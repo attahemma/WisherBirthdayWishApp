@@ -16,7 +16,9 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.itech.wisherbirthdaywishapp.database.DatabaseViewModel
 import com.itech.wisherbirthdaywishapp.databinding.FragmentOverviewBinding
 import com.itech.wisherbirthdaywishapp.model.UpcomingScreenModel
 import com.itech.wisherbirthdaywishapp.views.ui.upcomingscreen.UpcomingScreenAdapter
@@ -28,7 +30,9 @@ class OverviewFragment : Fragment(), UpcomingScreenClickInterface {
     private val binding get() = _binding!!
     private lateinit var requestPermissionLauncher: ActivityResultLauncher<String>
     private lateinit var rvAdapter: UpcomingScreenAdapter
-    private val listOfFriends = mutableListOf<UpcomingScreenModel>()
+    private lateinit var androidViewModel: DatabaseViewModel
+    private var listOfFriends = mutableListOf<UpcomingScreenModel>()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,6 +44,7 @@ class OverviewFragment : Fragment(), UpcomingScreenClickInterface {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+//        androidViewModel = ViewModelProvider(this).get(DatabaseViewModel::class.java)
         requestPermissionLauncher =
             registerForActivityResult(
                 ActivityResultContracts.RequestPermission()
@@ -55,6 +60,13 @@ class OverviewFragment : Fragment(), UpcomingScreenClickInterface {
         // function to read contact
         readContact()
         binding.retryRequest.setOnClickListener { readContact() }
+//        androidViewModel.readAllData.observe(viewLifecycleOwner) {
+//            if (it != null){
+//                rvAdapter = UpcomingScreenAdapter(it, this)
+//                binding.overviewScreenRv.adapter = rvAdapter
+//            }
+//        }
+
 
 
         binding.overviewScreenRv.apply {
@@ -87,7 +99,6 @@ class OverviewFragment : Fragment(), UpcomingScreenClickInterface {
         binding.overviewScreenRv.visibility = View.VISIBLE
         binding.onError.visibility = View.GONE
         binding.retryRequest.visibility = View.GONE
-        Toast.makeText(requireContext(), "lskkssksssss", Toast.LENGTH_SHORT).show()
         //query phone contact list
         val contact = requireActivity().contentResolver.query(
             ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
@@ -110,7 +121,7 @@ class OverviewFragment : Fragment(), UpcomingScreenClickInterface {
                         (ContactsContract.CommonDataKinds.Phone.PHOTO_URI)
                 )
                 //create an object of dataclass and pass to list for recycler view to display
-                val obj = UpcomingScreenModel(null, name, null)
+                val obj = UpcomingScreenModel(1,null, name, null)
                 if (imageResourse != null) {
                     obj.contactImage = MediaStore.Images.Media.getBitmap(
                         requireActivity().contentResolver,
@@ -119,13 +130,13 @@ class OverviewFragment : Fragment(), UpcomingScreenClickInterface {
                 } else {
                     obj.contactImage = null
                 }
-
                 listOfFriends.add(obj)
+                //androidViewModel.addUser(obj)
             }
         }
-        rvAdapter = UpcomingScreenAdapter(listOfFriends, this)
+        val listOfF = listOfFriends.toList().sortedBy { it.fullName }
+        rvAdapter = UpcomingScreenAdapter(listOfF, this)
         binding.overviewScreenRv.adapter = rvAdapter
-
     }
     override fun onDestroyView() {
         super.onDestroyView()
