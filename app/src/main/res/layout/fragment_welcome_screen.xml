@@ -68,7 +68,7 @@
 
     <TextView
         android:id="@+id/tvSplashScreen"
-        style="@style/HeaderFont"
+        style="@style/HeaderFontLarge"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="196dp"

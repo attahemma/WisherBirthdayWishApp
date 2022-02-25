@@ -14,5 +14,7 @@
     <string name="profile_image">Profile image</string>
     <string name="hi_there">Hi There!</string>
     <string name="add_a_friend">Add a friend</string>
+    <string name="send_gift">Send Gift</string>
+    <string name="select_gift_to_send">Select gift to send</string>
 
 </resources>

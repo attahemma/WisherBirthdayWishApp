@@ -30,11 +30,20 @@
     </style>
 
 
-    <style name="HeaderFont">
+    <style name="HeaderFontLarge">
         <item name="fontFamily">@font/poppins_bold</item>
         <item name="android:textSize">48sp</item>
     </style>
 
+    <style name="HeaderFontMedium">
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">38sp</item>
+    </style>
+
+    <style name="HeaderFontSmall">
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">28sp</item>
+    </style>
 
     <style name="rectangle_image">
         <item name="cornerSize">10%</item>

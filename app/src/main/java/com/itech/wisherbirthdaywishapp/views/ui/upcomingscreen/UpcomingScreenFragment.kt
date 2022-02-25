@@ -56,4 +56,12 @@ class UpcomingScreenFragment : Fragment(), UpcomingScreenClickInterface {
     override fun clickFriendCard(position: Int) {
         Toast.makeText(requireContext(), "You clicked item $position", Toast.LENGTH_SHORT).show()
     }
+
+    override fun showGiftBottomSheet(position: Int) {
+        TODO("Not yet implemented")
+    }
+
+    override fun closeBottomSheet() {
+        TODO("Not yet implemented")
+    }
 }

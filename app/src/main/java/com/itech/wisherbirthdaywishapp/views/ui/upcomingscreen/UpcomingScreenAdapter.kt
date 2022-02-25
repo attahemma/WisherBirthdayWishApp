@@ -27,7 +27,10 @@ class UpcomingScreenAdapter(
     override fun onBindViewHolder(holder: UpcomingScreenViewHolder, position: Int) {
         with(holder) {
             with(listOfFriends[position]) {
-                itemView.setOnClickListener { clickInterface.clickFriendCard(position) }
+                itemView.setOnClickListener {
+                    clickInterface.clickFriendCard(position)
+                    clickInterface.showGiftBottomSheet(position)
+                }
                 binding.friendFullName.text = fullName
                 binding.friendDateOfBirth.text = date
             }
