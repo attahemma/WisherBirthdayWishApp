@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey"
+    android:background="@color/white"
+    android:id="@+id/fragment_overview"
     tools:context=".views.ui.overviewscreen.OverviewFragment">
 
     <View
@@ -57,7 +58,29 @@
         tools:itemCount="4"
         tools:listitem="@layout/upcoming_screen_recycler_item"
         tools:orientation="vertical" />
-
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/onError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/permission_denied_message"
+        android:gravity="center"
+        />
+    <Button
+        android:visibility="gone"
+        android:id="@+id/retryRequest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/accept_permission"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/onError"
+        app:layout_constraintStart_toStartOf="@id/onError"
+        app:layout_constraintEnd_toEndOf="@id/onError"
+        />
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

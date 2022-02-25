@@ -1,6 +1,10 @@
 package com.itech.wisherbirthdaywishapp.model
 
+import android.graphics.Bitmap
+import androidx.annotation.DrawableRes
+
 data class UpcomingScreenModel(
-    val fullName: String,
-    val date: String
+    var contactImage:Bitmap? = null,
+    val fullName: String? = null,
+    val date: String? = null
 )

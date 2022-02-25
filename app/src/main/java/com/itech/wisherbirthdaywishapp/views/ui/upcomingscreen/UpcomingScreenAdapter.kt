@@ -3,6 +3,7 @@ package com.itech.wisherbirthdaywishapp.views.ui.upcomingscreen
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.itech.wisherbirthdaywishapp.R
 import com.itech.wisherbirthdaywishapp.databinding.UpcomingScreenRecyclerItemBinding
 import com.itech.wisherbirthdaywishapp.model.UpcomingScreenModel
 import com.itech.wisherbirthdaywishapp.views.utils.UpcomingScreenClickInterface
@@ -28,11 +29,25 @@ class UpcomingScreenAdapter(
         with(holder) {
             with(listOfFriends[position]) {
                 itemView.setOnClickListener { clickInterface.clickFriendCard(position) }
+
                 binding.friendFullName.text = fullName
-                binding.friendDateOfBirth.text = date
+
+                if (date == null)
+                    "Add date".also { binding.friendDateOfBirth.text = it }
+                else
+                    binding.friendDateOfBirth.text = date
+
+                if (contactImage != null)
+                    binding.friendProfileImage.setImageBitmap(contactImage)
+                else
+                    binding.friendProfileImage.setImageResource(R.drawable.profile_image)
+
             }
         }
     }
-
+    fun addToList(data:UpcomingScreenModel){
+        listOfFriends.add(data)
+        notifyDataSetChanged()
+    }
     override fun getItemCount() = listOfFriends.size
 }

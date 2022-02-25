@@ -37,7 +37,7 @@
             app:destination="@id/signUP" />
         <action
             android:id="@+id/action_welcomeScreenFragment_to_overview"
-            app:destination="@id/overview" />
+            app:destination="@id/fragment_overview" />
     </fragment>
     <fragment
         android:id="@+id/signIn"
@@ -50,7 +50,12 @@
         android:label="fragment_sign_u_p"
         tools:layout="@layout/fragment_sign_u_p" />
     <fragment
-        android:id="@+id/overview"
+        android:id="@+id/fragment_overview"
         android:name="com.itech.wisherbirthdaywishapp.views.ui.overviewscreen.OverviewFragment"
         tools:layout="@layout/fragment_overview" />
+    <fragment
+        android:id="@+id/fragment_upcoming_screen"
+        android:name="com.itech.wisherbirthdaywishapp.views.ui.upcomingscreen.UpcomingScreenFragment"
+        android:label="fragment_upcoming_screen"
+        tools:layout="@layout/fragment_upcoming_screen" />
 </navigation>
