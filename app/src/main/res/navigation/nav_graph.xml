@@ -52,10 +52,19 @@
     <fragment
         android:id="@+id/fragment_overview"
         android:name="com.itech.wisherbirthdaywishapp.views.ui.overviewscreen.OverviewFragment"
-        tools:layout="@layout/fragment_overview" />
+        tools:layout="@layout/fragment_overview" >
+        <action
+            android:id="@+id/action_fragment_overview_to_fetchFriendsFromContact"
+            app:destination="@id/fetchFriendsFromContact" />
+    </fragment>
     <fragment
         android:id="@+id/fragment_upcoming_screen"
         android:name="com.itech.wisherbirthdaywishapp.views.ui.upcomingscreen.UpcomingScreenFragment"
         android:label="fragment_upcoming_screen"
         tools:layout="@layout/fragment_upcoming_screen" />
+    <fragment
+        android:id="@+id/fetchFriendsFromContact"
+        android:name="com.itech.wisherbirthdaywishapp.views.ui.fetchFriendFromContactList.FetchFriendsFromContact"
+        android:label="fragment_fetch_freind_from_contact"
+        tools:layout="@layout/fragment_fetch_freind_from_contact" />
 </navigation>
