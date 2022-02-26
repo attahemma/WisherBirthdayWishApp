@@ -26,26 +26,26 @@ class UpcomingScreenFragment : Fragment(), UpcomingScreenClickInterface {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val listOfFriends = mutableListOf(
-            UpcomingScreenModel("Konohamaru Sarutobi", "02 Feb"),
-            UpcomingScreenModel("Sakura Haruno", "22 Jun"),
-            UpcomingScreenModel("Hyuga Hinata", "09 Dec"),
-            UpcomingScreenModel("Hatake Kakashi", "15 Jan"),
-            UpcomingScreenModel("Toneri Ōtsutsuki", "05 Mar"),
-            UpcomingScreenModel("Uchiha Madara", "20 May"),
-            UpcomingScreenModel("Uchiha Sasuke", "19 Aug"),
-            UpcomingScreenModel("Uzumaki Naruto", "15 Apr"),
-            UpcomingScreenModel("Uchiha Sarada", "23 Nov"),
-            UpcomingScreenModel("Rock Lee", "30 Sep"),
-            UpcomingScreenModel("Akimichi Choji", "11 Jul"),
-            UpcomingScreenModel("Inuzuka Kiba", "28 Oct"),
-        )
+//        val listOfFriends = mutableListOf(
+//            UpcomingScreenModel("Konohamaru Sarutobi", "02 Feb"),
+//            UpcomingScreenModel("Sakura Haruno", "22 Jun"),
+//            UpcomingScreenModel("Hyuga Hinata", "09 Dec"),
+//            UpcomingScreenModel("Hatake Kakashi", "15 Jan"),
+//            UpcomingScreenModel("Toneri Ōtsutsuki", "05 Mar"),
+//            UpcomingScreenModel("Uchiha Madara", "20 May"),
+//            UpcomingScreenModel("Uchiha Sasuke", "19 Aug"),
+//            UpcomingScreenModel("Uzumaki Naruto", "15 Apr"),
+//            UpcomingScreenModel("Uchiha Sarada", "23 Nov"),
+//            UpcomingScreenModel("Rock Lee", "30 Sep"),
+//            UpcomingScreenModel("Akimichi Choji", "11 Jul"),
+//            UpcomingScreenModel("Inuzuka Kiba", "28 Oct"),
+//        )
 
-        adapter = UpcomingScreenAdapter(listOfFriends, this)
-        binding.upcomingScreenRv.apply {
-            adapter = adapter
-            setHasFixedSize(true)
-        }
+//        adapter = UpcomingScreenAdapter(listOfFriends, this)
+//        binding.upcomingScreenRv.apply {
+//            adapter = adapter
+//            setHasFixedSize(true)
+//        }
     }
 
     override fun onDestroyView() {

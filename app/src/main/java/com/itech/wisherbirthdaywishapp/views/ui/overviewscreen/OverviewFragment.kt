@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.itech.wisherbirthdaywishapp.R
 import com.itech.wisherbirthdaywishapp.databinding.FragmentOverviewBinding
 import com.itech.wisherbirthdaywishapp.model.UpcomingScreenModel
 import com.itech.wisherbirthdaywishapp.views.ui.upcomingscreen.UpcomingScreenAdapter
@@ -15,7 +17,11 @@ import com.itech.wisherbirthdaywishapp.views.utils.UpcomingScreenClickInterface
 class OverviewFragment : Fragment(), UpcomingScreenClickInterface {
     private var _binding: FragmentOverviewBinding? = null
     private val binding get() = _binding!!
-    private lateinit var adapter: UpcomingScreenAdapter
+    private lateinit var rvAdapter: UpcomingScreenAdapter
+    private var isVisibleFab = false
+//    private lateinit var androidViewModel: DatabaseViewModel
+    private var listOfFriends = mutableListOf<UpcomingScreenModel>()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,27 +33,64 @@ class OverviewFragment : Fragment(), UpcomingScreenClickInterface {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+//        androidViewModel = ViewModelProvider(this).get(DatabaseViewModel::class.java)
+        setClickListeners()
+        listOfFriends.add(UpcomingScreenModel(1, fullName = "Paul", date = "10-03-2022"))
+        listOfFriends.add(UpcomingScreenModel(1, fullName = "johnson", date = "10-03-2022"))
+        listOfFriends.add(UpcomingScreenModel(1, fullName = "johnson", date = "10-03-2022"))
+        listOfFriends.add(UpcomingScreenModel(1, fullName = "fish", date = "10-03-2022"))
+        listOfFriends.add(UpcomingScreenModel(1, fullName = "Cram", date = "10-03-2022"))
+        rvAdapter = UpcomingScreenAdapter(listOfFriends, this)
+        binding.overviewScreenRv.adapter = rvAdapter
 
-        val listOfFriends = mutableListOf(
-            UpcomingScreenModel("Konohamaru Sarutobi", "02 Feb"),
-            UpcomingScreenModel("Sakura Haruno", "22 Jun"),
-            UpcomingScreenModel("Hyuga Hinata", "09 Dec"),
-            UpcomingScreenModel("Hatake Kakashi", "15 Jan"),
-            UpcomingScreenModel("Toneri Ōtsutsuki", "05 Mar"),
-            UpcomingScreenModel("Uchiha Madara", "20 May"),
-            UpcomingScreenModel("Uchiha Sasuke", "19 Aug"),
-            UpcomingScreenModel("Uzumaki Naruto", "15 Apr"),
-            UpcomingScreenModel("Uchiha Sarada", "23 Nov"),
-            UpcomingScreenModel("Rock Lee", "30 Sep"),
-            UpcomingScreenModel("Akimichi Choji", "11 Jul"),
-            UpcomingScreenModel("Inuzuka Kiba", "28 Oct"),
-        )
 
-        adapter = UpcomingScreenAdapter(listOfFriends, this)
+
+
+
+//        androidViewModel.readAllData.observe(viewLifecycleOwner) {
+//            if (it != null){
+//                rvAdapter = UpcomingScreenAdapter(it, this)
+//                binding.overviewScreenRv.adapter = rvAdapter
+//            }else{
+//                rvAdapter = UpcomingScreenAdapter(listOfFriends, this)
+//                binding.overviewScreenRv.adapter = rvAdapter
+//            }
+//        }
+        rvAdapter = UpcomingScreenAdapter(listOfFriends, this)
+
         binding.overviewScreenRv.apply {
             layoutManager = LinearLayoutManager(context)
-            adapter = adapter
+            adapter = rvAdapter
             setHasFixedSize(true)
+        }
+    }
+
+    private fun setClickListeners() {
+        binding.addContact.setOnClickListener {
+            if (isVisibleFab){
+                binding.fromContact.visibility = View.GONE
+                binding.addManually.visibility = View.GONE
+                binding.addContact.setImageResource(R.drawable.ic_baseline_add_24)
+                isVisibleFab=false
+
+            }else{
+
+                binding.fromContact.visibility = View.VISIBLE
+                binding.addManually.visibility = View.VISIBLE
+                binding.addContact.setImageResource(R.drawable.ic_baseline_shuffle_24)
+                isVisibleFab=true
+            }
+        }
+        binding.fromContact.setOnClickListener {
+            findNavController().navigate(R.id.action_fragment_overview_to_fetchFriendsFromContact)
+
+        }
+        binding.addManually.setOnClickListener {
+            Toast.makeText(
+                context,
+                "should navigate to add contact fragment",
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 
