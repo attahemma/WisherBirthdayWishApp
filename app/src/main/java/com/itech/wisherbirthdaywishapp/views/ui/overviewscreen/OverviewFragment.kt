@@ -15,7 +15,7 @@ import com.itech.wisherbirthdaywishapp.views.utils.UpcomingScreenClickInterface
 class OverviewFragment : Fragment(), UpcomingScreenClickInterface {
     private var _binding: FragmentOverviewBinding? = null
     private val binding get() = _binding!!
-    private lateinit var adapter: UpcomingScreenAdapter
+    private lateinit var upcomingScreenAdapter: UpcomingScreenAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,10 +43,10 @@ class OverviewFragment : Fragment(), UpcomingScreenClickInterface {
             UpcomingScreenModel("Inuzuka Kiba", "28 Oct"),
         )
 
-        adapter = UpcomingScreenAdapter(listOfFriends, this)
+        upcomingScreenAdapter = UpcomingScreenAdapter(listOfFriends, this)
         binding.overviewScreenRv.apply {
             layoutManager = LinearLayoutManager(context)
-            adapter = adapter
+            adapter = upcomingScreenAdapter
             setHasFixedSize(true)
         }
     }
