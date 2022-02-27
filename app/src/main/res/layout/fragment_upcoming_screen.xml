@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
+    android:id="@+id/fragment_upcoming_screen"
     tools:context=".views.ui.upcomingscreen.UpcomingScreenFragment">
 
     <androidx.appcompat.widget.Toolbar
@@ -20,7 +22,7 @@
         android:id="@+id/upcoming_screen_rv"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#74808080"
+        android:background="@color/white"
         android:paddingBottom="24dp"
         android:scrollbars="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
