@@ -45,10 +45,6 @@ class OverviewFragment : Fragment(), UpcomingScreenClickInterface {
         rvAdapter = UpcomingScreenAdapter(listOfFriends, this)
         binding.overviewScreenRv.adapter = rvAdapter
 
-
-
-
-
 //        androidViewModel.readAllData.observe(viewLifecycleOwner) {
 //            if (it != null){
 //                rvAdapter = UpcomingScreenAdapter(it, this)
