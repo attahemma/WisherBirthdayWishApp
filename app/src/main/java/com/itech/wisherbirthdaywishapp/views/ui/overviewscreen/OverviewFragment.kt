@@ -4,14 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.itech.wisherbirthdaywishapp.R
 import com.itech.wisherbirthdaywishapp.databinding.FragmentOverviewBinding
 import com.itech.wisherbirthdaywishapp.model.UpcomingScreenModel
@@ -21,14 +17,13 @@ import com.itech.wisherbirthdaywishapp.views.utils.UpcomingScreenClickInterface
 class OverviewFragment : Fragment(), UpcomingScreenClickInterface {
     private var _binding: FragmentOverviewBinding? = null
     private val binding get() = _binding!!
-    private lateinit var upcomingScreenAdapter: UpcomingScreenAdapter
-    private lateinit var bottomSheetDialog: BottomSheetDialog
-    private lateinit var overFragmentLayout: ConstraintLayout
 
-    //bottom sheet items
-    private lateinit var btnSendGift: Button
-    private lateinit var imgGift: ImageView
-    private lateinit var tvBottomSheetHeader: TextView
+    private lateinit var rvAdapter: UpcomingScreenAdapter
+    private var isVisibleFab = false
+//    private lateinit var androidViewModel: DatabaseViewModel
+    private var listOfFriends = mutableListOf<UpcomingScreenModel>()
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,36 +35,61 @@ class OverviewFragment : Fragment(), UpcomingScreenClickInterface {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.overviewFragmentLayout.setOnClickListener {
-            closeBottomSheet()
-        }
+//        androidViewModel = ViewModelProvider(this).get(DatabaseViewModel::class.java)
+        setClickListeners()
+        listOfFriends.add(UpcomingScreenModel(1, fullName = "Paul", date = "10-03-2022"))
+        listOfFriends.add(UpcomingScreenModel(1, fullName = "johnson", date = "10-03-2022"))
+        listOfFriends.add(UpcomingScreenModel(1, fullName = "johnson", date = "10-03-2022"))
+        listOfFriends.add(UpcomingScreenModel(1, fullName = "fish", date = "10-03-2022"))
+        listOfFriends.add(UpcomingScreenModel(1, fullName = "Cram", date = "10-03-2022"))
+        rvAdapter = UpcomingScreenAdapter(listOfFriends, this)
+        binding.overviewScreenRv.adapter = rvAdapter
 
-        bottomSheetDialog = BottomSheetDialog(requireActivity()).apply {
-            setContentView(R.layout.gift_friend_bottom_sheet_layout)
-            initializeBottomSheetItems(this)
-        }
+//        androidViewModel.readAllData.observe(viewLifecycleOwner) {
+//            if (it != null){
+//                rvAdapter = UpcomingScreenAdapter(it, this)
+//                binding.overviewScreenRv.adapter = rvAdapter
+//            }else{
+//                rvAdapter = UpcomingScreenAdapter(listOfFriends, this)
+//                binding.overviewScreenRv.adapter = rvAdapter
+//            }
+//        }
+        rvAdapter = UpcomingScreenAdapter(listOfFriends, this)
 
 
-        val listOfFriends = mutableListOf(
-            UpcomingScreenModel("Konohamaru Sarutobi", "02 Feb"),
-            UpcomingScreenModel("Sakura Haruno", "22 Jun"),
-            UpcomingScreenModel("Hyuga Hinata", "09 Dec"),
-            UpcomingScreenModel("Hatake Kakashi", "15 Jan"),
-            UpcomingScreenModel("Toneri Ōtsutsuki", "05 Mar"),
-            UpcomingScreenModel("Uchiha Madara", "20 May"),
-            UpcomingScreenModel("Uchiha Sasuke", "19 Aug"),
-            UpcomingScreenModel("Uzumaki Naruto", "15 Apr"),
-            UpcomingScreenModel("Uchiha Sarada", "23 Nov"),
-            UpcomingScreenModel("Rock Lee", "30 Sep"),
-            UpcomingScreenModel("Akimichi Choji", "11 Jul"),
-            UpcomingScreenModel("Inuzuka Kiba", "28 Oct"),
-        )
-
-        upcomingScreenAdapter = UpcomingScreenAdapter(listOfFriends, this)
         binding.overviewScreenRv.apply {
             layoutManager = LinearLayoutManager(context)
-            adapter = upcomingScreenAdapter
+            adapter = rvAdapter
             setHasFixedSize(true)
+        }
+    }
+
+    private fun setClickListeners() {
+        binding.addContact.setOnClickListener {
+            if (isVisibleFab){
+                binding.fromContact.visibility = View.GONE
+                binding.addManually.visibility = View.GONE
+                binding.addContact.setImageResource(R.drawable.ic_baseline_add_24)
+                isVisibleFab=false
+
+            }else{
+
+                binding.fromContact.visibility = View.VISIBLE
+                binding.addManually.visibility = View.VISIBLE
+                binding.addContact.setImageResource(R.drawable.ic_baseline_shuffle_24)
+                isVisibleFab=true
+            }
+        }
+        binding.fromContact.setOnClickListener {
+            findNavController().navigate(R.id.action_fragment_overview_to_fetchFriendsFromContact)
+
+        }
+        binding.addManually.setOnClickListener {
+            Toast.makeText(
+                context,
+                "should navigate to add contact fragment",
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 
@@ -80,21 +100,5 @@ class OverviewFragment : Fragment(), UpcomingScreenClickInterface {
 
     override fun clickFriendCard(position: Int) {
         Toast.makeText(requireContext(), "You clicked item $position", Toast.LENGTH_SHORT).show()
-    }
-
-
-    override fun showGiftBottomSheet(position: Int) {
-        bottomSheetDialog.show()
-
-    }
-
-    override fun closeBottomSheet() {
-        bottomSheetDialog.dismiss()
-    }
-
-    private fun initializeBottomSheetItems(dialog: BottomSheetDialog) {
-        btnSendGift = dialog.findViewById<Button>(R.id.btnGiftFriendBottomSheet)!!
-        imgGift = dialog.findViewById<ImageView>(R.id.imgGiftFriendBottomSheet)!!
-        tvBottomSheetHeader = dialog.findViewById<TextView>(R.id.headerGiftFriendBottomSheet)!!
     }
 }

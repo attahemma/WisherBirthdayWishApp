@@ -1,6 +1,14 @@
 package com.itech.wisherbirthdaywishapp.model
 
+import android.graphics.Bitmap
+import androidx.annotation.DrawableRes
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "Friend_Table")
 data class UpcomingScreenModel(
-    val fullName: String,
-    val date: String
+    @PrimaryKey(autoGenerate = true) val id:Int,
+    var contactImage:Bitmap? = null,
+    val fullName: String? = null,
+    val date: String? = null
 )

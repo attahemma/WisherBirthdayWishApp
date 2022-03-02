@@ -14,7 +14,7 @@
     <string name="profile_image">Profile image</string>
     <string name="hi_there">Hi There!</string>
     <string name="add_a_friend">Add a friend</string>
-    <string name="send_gift">Send Gift</string>
-    <string name="select_gift_to_send">Select gift to send</string>
+    <string name="permission_denied_message">Access to contact list has been denied and Friend LIst Cannot be loaded,please click button below to grant permission</string>
+    <string name="accept_permission">Accept Permission</string>
 
 </resources>
