@@ -12,6 +12,24 @@ Project utilizes: <br>
   <li>Architecture Components</li>
 </ol>
 
+## 📸 Screenshots
+---------------------------------
+<div>  
+
+<img src="/screenshots/splashscreen.png" height="auto" width="200" hspace="20">
+
+<img src="/screenshots/onboard1.png" height="auto" width="200" hspace="20">
+
+<img src="/screenshots/onboard2.png" height="auto" width="200" hspace="20">
+
+<img src="/screenshots/welcome.png" height="auto" width="200" hspace="20">
+
+<img src="/screenshots/sign_in.png" height="auto" width="200" hspace="20">
+
+<img src="/screenshots/sign_up.png" height="auto" width="200" hspace="20">
+
+</div>
+
 ## Contribrution Rules
 Please adhere to these rules if you're interested to contribute to this project
 <ul>

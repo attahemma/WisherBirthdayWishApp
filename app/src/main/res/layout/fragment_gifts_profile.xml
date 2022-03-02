@@ -5,18 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".GiftsProfile"
-    android:background="#F6F4F4">
+    android:background="#D4D4D5">
 
     <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_margin="15dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="40dp"
         android:id="@+id/image"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
         android:src="@drawable/ic_baseline_person_24"
         android:background="@drawable/profile_background"
-        app:tint="@color/design_default_color_primary_dark"
         android:padding="15dp"/>
 
 
@@ -25,11 +24,66 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/image"
         android:layout_centerInParent="true"
-        android:text="Username"
-        android:textSize="20sp"
+        android:text="Attah Emmanuel"
+        android:textSize="30sp"
         android:textStyle="bold"
         android:id="@+id/name"
+        android:fontFamily="@font/poppins_extrabold"
+        android:layout_marginTop="10dp"
+        />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/calendar"
+        android:layout_below="@id/name"
+        android:id="@+id/calendar_icon"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="150dp"
+        app:tint="@color/black" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:text="No birth day added"
+        android:textColor="@color/black"
+        android:layout_margin="7dp"
+        android:layout_toEndOf="@id/calendar_icon"
+        android:layout_below="@id/name"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Select gift"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="25dp"
+        android:textColor="@color/black"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/calendar_icon"
+        android:layout_marginStart="30dp"
+        android:id="@+id/selectGift"
         />
 
-    
+        <ImageView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@drawable/ic_baseline_card_giftcard_24"
+            android:layout_toEndOf="@id/selectGift"
+            android:layout_below="@id/calendar_icon"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="10dp"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/selectGift"
+        android:layout_marginTop="20dp"
+        app:spanCount="2"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        android:orientation="horizontal"
+        tools:listitem="@layout/recyclerview_gift_layout"
+        />
+
 </RelativeLayout>

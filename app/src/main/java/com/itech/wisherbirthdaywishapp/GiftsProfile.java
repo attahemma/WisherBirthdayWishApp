@@ -15,7 +15,8 @@ public class GiftsProfile extends Fragment {
     public GiftsProfile() {
         // Required empty public constructor
     }
-
+   private int [] gifts = {R.drawable.ballon, R.drawable.cake, R.drawable.flower,
+   R.drawable.ballon, R.drawable.cake, R.drawable.flower};
 
 
 

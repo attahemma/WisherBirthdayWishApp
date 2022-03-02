@@ -1,23 +1,25 @@
 package com.itech.wisherbirthdaywishapp.views.ui.onboardingFragment
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.itech.wisherbirthdaywishapp.R
 import com.itech.wisherbirthdaywishapp.databinding.FragmentOnboardingBinding
+import com.itech.wisherbirthdaywishapp.model.ViewPagerDataModel
 
-class OnboardingFragment : Fragment(R.layout.fragment_onboarding) {
+class OnboardingFragment (): Fragment(R.layout.fragment_onboarding) {
     private lateinit var binding: FragmentOnboardingBinding
     private lateinit var listOfOnBoardingItems: List<ViewPagerDataModel>
     private lateinit var adapter: OnboardingFragmentViewPagerAdapter
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentOnboardingBinding.bind(view)
@@ -55,7 +57,7 @@ class OnboardingFragment : Fragment(R.layout.fragment_onboarding) {
                 onBoardingVp.currentItem +=1
 
             }else{
-                navigateToLoginFragment()
+                navigateToWelcomeFragment()
             }
         }
         binding.btnPrevious.setOnClickListener {
@@ -65,8 +67,10 @@ class OnboardingFragment : Fragment(R.layout.fragment_onboarding) {
         }
     }
 
-    private fun navigateToLoginFragment() {
-// navigate to login fragment
+
+    private fun navigateToWelcomeFragment() {
+        findNavController().navigate(R.id.action_onboardingFragment_to_welcomeScreenFragment)
+        onBoardingFinished()
     }
 
     private fun setUpIndicator() {
@@ -92,6 +96,12 @@ class OnboardingFragment : Fragment(R.layout.fragment_onboarding) {
             }
         }
 
+    }
+    private fun onBoardingFinished() {
+        val sharedPref = requireActivity().getSharedPreferences("onboarding", Context.MODE_PRIVATE)
+        val editor = sharedPref.edit()
+        editor.putBoolean("finished",true)
+        editor.apply()
     }
 
     fun setUpCurrentIndicator(position: Int) {
