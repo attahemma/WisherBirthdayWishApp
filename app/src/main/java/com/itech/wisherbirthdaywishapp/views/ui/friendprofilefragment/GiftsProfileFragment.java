@@ -1,4 +1,4 @@
-package com.itech.wisherbirthdaywishapp;
+package com.itech.wisherbirthdaywishapp.views.ui.friendprofilefragment;
 
 import android.os.Bundle;
 
@@ -9,15 +9,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.itech.wisherbirthdaywishapp.R;
 import com.itech.wisherbirthdaywishapp.model.GiftsProfileAdapter;
 
 
-public class GiftsProfile extends Fragment {
+public class GiftsProfileFragment extends Fragment {
 
      RecyclerView recyclerView;
 
 
-    public GiftsProfile() {
+    public GiftsProfileFragment() {
     }
    private int [] gifts = {R.drawable.ballon, R.drawable.cake, R.drawable.flower,
    R.drawable.ballon, R.drawable.cake, R.drawable.flower};
