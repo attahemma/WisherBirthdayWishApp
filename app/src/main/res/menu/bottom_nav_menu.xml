@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/fragment_overview"
+        android:title="Overview"
+        android:icon="@drawable/ic_baseline_api_24"/>
+    <item
+        android:id="@+id/fragment_upcoming_screen"
+        android:title="Upcoming"
+        android:icon="@drawable/ic_baseline_query_builder_24"/>
+    <item
+        android:id="@+id/backupFragment"
+        android:title="BackUp"
+        android:icon="@drawable/ic_baseline_hourglass_bottom_24"/>
+</menu>
