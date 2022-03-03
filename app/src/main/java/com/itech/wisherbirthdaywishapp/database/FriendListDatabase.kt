@@ -1,7 +1,7 @@
 package com.itech.wisherbirthdaywishapp.database
 
 import android.content.Context
-import androidx.room.*
+
 import com.itech.wisherbirthdaywishapp.model.UpcomingScreenModel
 import com.itech.wisherbirthdaywishapp.views.utils.DatabaseTypeConverter
 

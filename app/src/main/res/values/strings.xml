@@ -16,5 +16,7 @@
     <string name="add_a_friend">Add a friend</string>
     <string name="permission_denied_message">Access to contact list has been denied and Friend LIst Cannot be loaded,please click button below to grant permission</string>
     <string name="accept_permission">Accept Permission</string>
+    <string name="select_gift_to_send">Select a gift to send</string>
+    <string name="send_gift">Send Gift</string>
 
 </resources>
