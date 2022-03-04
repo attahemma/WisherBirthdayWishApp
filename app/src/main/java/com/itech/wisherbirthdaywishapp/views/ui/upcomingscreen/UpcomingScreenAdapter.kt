@@ -45,5 +45,6 @@ class UpcomingScreenAdapter(
             }
         }
     }
+
     override fun getItemCount() = listOfFriends.size
 }

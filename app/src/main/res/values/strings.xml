@@ -18,5 +18,8 @@
     <string name="accept_permission">Accept Permission</string>
     <string name="select_gift_to_send">Select a gift to send</string>
     <string name="send_gift">Send Gift</string>
+    <string name="price_default_value">$0.56</string>
+    <string name="dollar">$</string>
+
 
 </resources>

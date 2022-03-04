@@ -16,6 +16,8 @@
         <!-- Customize your theme here. -->
         <item name="android:fontFamily">@font/poppins_regular</item>
 
+        <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialog</item>
+
     </style>
 
     <style name="ButtonFontRegular">
@@ -29,6 +31,11 @@
         <item name="android:textSize">14sp</item>
     </style>
 
+
+    <style name="TagFontBold">
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
 
     <style name="HeaderFontLarge">
         <item name="fontFamily">@font/poppins_bold</item>
@@ -50,7 +57,6 @@
     </style>
 
 
-
     <style name="CurvedTopCard" parent="Widget.MaterialComponents.CardView">
         <item name="cornerSizeTopLeft">10%</item>
         <item name="cornerSizeTopRight">10%</item>
@@ -67,5 +73,18 @@
 
     <style name="calendar_bg_color">
         <item name="background">@drawable/calendar_bg</item>
+    </style>
+
+    <style name="ButtonBordered" parent="Widget.AppCompat.Button.Colored">
+        <item name="background">@drawable/rectangular_transparent</item>
+    </style>
+
+
+    <style name="BottomSheetStyle" parent="Widget.MaterialComponents.BottomSheet.Modal">
+        <item name="background">@drawable/bottom_nav_background</item>
+    </style>
+
+    <style name="CustomBottomSheetDialog" parent="ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
     </style>
 </resources>
