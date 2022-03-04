@@ -64,7 +64,7 @@ public class signUP extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        Navigation.findNavController(view).navigate(R.id.overview);
+        Navigation.findNavController(view).navigate(R.id.fragment_overview);
     }
 
 
