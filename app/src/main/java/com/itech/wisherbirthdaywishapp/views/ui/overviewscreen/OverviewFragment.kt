@@ -100,5 +100,14 @@ class OverviewFragment : Fragment(), UpcomingScreenClickInterface {
 
     override fun clickFriendCard(position: Int) {
         Toast.makeText(requireContext(), "You clicked item $position", Toast.LENGTH_SHORT).show()
+        findNavController().navigate(R.id.giftsProfileFragment)
+    }
+
+    override fun showGiftBottomSheet(position: Int) {
+        //
+    }
+
+    override fun closeBottomSheet() {
+       //
     }
 }
