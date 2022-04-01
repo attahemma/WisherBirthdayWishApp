@@ -1,6 +1,5 @@
 package com.itech.wisherbirthdaywishapp.views.ui.friendprofilefragment;
 
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.itech.wisherbirthdaywishapp.R;
-import com.itech.wisherbirthdaywishapp.database.Gift;
-import com.itech.wisherbirthdaywishapp.views.utils.ConstantsKt;
+import com.itech.wisherbirthdaywishapp.model.entities.Gift;
 import com.itech.wisherbirthdaywishapp.views.utils.GiftingInterface;
 
 import java.util.ArrayList;
@@ -19,11 +17,11 @@ import java.util.List;
 
 public class GiftsProfileAdapter extends RecyclerView.Adapter<GiftsProfileAdapter.Profile> {
 
-    private ArrayList<Gift> mGifts;
+    private List<Gift> mGifts;
     private GiftingInterface mGiftingInterface;
 
 
-    public GiftsProfileAdapter(ArrayList<Gift> gifts, GiftingInterface giftingInterface) {
+    public GiftsProfileAdapter(List<Gift> gifts, GiftingInterface giftingInterface) {
         this.mGifts = gifts;
         this.mGiftingInterface = giftingInterface;
     }
@@ -59,7 +57,7 @@ public class GiftsProfileAdapter extends RecyclerView.Adapter<GiftsProfileAdapte
         }
 
         public void bind(final Gift gift, final GiftingInterface giftingInterface) {
-            cardImage.setImageResource(gift.getResource());
+            cardImage.setImageResource(gift.getImageResource());
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

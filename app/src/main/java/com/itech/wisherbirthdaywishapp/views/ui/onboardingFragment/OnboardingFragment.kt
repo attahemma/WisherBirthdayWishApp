@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.itech.wisherbirthdaywishapp.R
 import com.itech.wisherbirthdaywishapp.databinding.FragmentOnboardingBinding
-import com.itech.wisherbirthdaywishapp.model.ViewPagerDataModel
+import com.itech.wisherbirthdaywishapp.model.entities.ViewPagerDataModel
 
 class OnboardingFragment (): Fragment(R.layout.fragment_onboarding) {
     private lateinit var binding: FragmentOnboardingBinding

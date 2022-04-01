@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.itech.wisherbirthdaywishapp.R
 import com.itech.wisherbirthdaywishapp.databinding.OnboardingviewpagerLayoutBinding
-import com.itech.wisherbirthdaywishapp.model.ViewPagerDataModel
+import com.itech.wisherbirthdaywishapp.model.entities.ViewPagerDataModel
 
 class OnboardingFragmentViewPagerAdapter() :
     RecyclerView.Adapter<OnboardingFragmentViewPagerAdapter.OnboardingViewHolder>() {
@@ -27,15 +27,15 @@ class OnboardingFragmentViewPagerAdapter() :
 
     private val differCallBack = object : DiffUtil.ItemCallback<ViewPagerDataModel>() {
         override fun areItemsTheSame(
-                oldItem: ViewPagerDataModel,
-                newItem: ViewPagerDataModel
+            oldItem: ViewPagerDataModel,
+            newItem: ViewPagerDataModel
         ): Boolean {
             return oldItem.onBoardingImage == newItem.onBoardingImage
         }
 
         override fun areContentsTheSame(
-                oldItem: ViewPagerDataModel,
-                newItem: ViewPagerDataModel
+            oldItem: ViewPagerDataModel,
+            newItem: ViewPagerDataModel
         ): Boolean {
             return oldItem == newItem
         }

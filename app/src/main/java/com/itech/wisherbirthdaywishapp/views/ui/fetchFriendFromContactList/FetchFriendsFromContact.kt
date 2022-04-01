@@ -8,9 +8,7 @@ import android.os.Bundle
 import android.provider.ContactsContract
 import android.provider.MediaStore
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -18,10 +16,8 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.itech.wisherbirthdaywishapp.R
 import com.itech.wisherbirthdaywishapp.databinding.FragmentFetchFreindFromContactBinding
-import com.itech.wisherbirthdaywishapp.model.UpcomingScreenModel
-import com.itech.wisherbirthdaywishapp.views.ui.upcomingscreen.UpcomingScreenAdapter
+import com.itech.wisherbirthdaywishapp.model.entities.UpcomingScreenModel
 import com.itech.wisherbirthdaywishapp.views.utils.ContactScreenClickListener
-import com.itech.wisherbirthdaywishapp.views.utils.UpcomingScreenClickInterface
 
 class FetchFriendsFromContact : Fragment(R.layout.fragment_fetch_freind_from_contact),
     ContactScreenClickListener {

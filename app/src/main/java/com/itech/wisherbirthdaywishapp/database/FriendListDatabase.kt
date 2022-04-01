@@ -6,15 +6,16 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 
-import com.itech.wisherbirthdaywishapp.model.UpcomingScreenModel
+import com.itech.wisherbirthdaywishapp.model.entities.UpcomingScreenModel
+import com.itech.wisherbirthdaywishapp.model.dao.FriendListDao
 import com.itech.wisherbirthdaywishapp.views.utils.DatabaseTypeConverter
 
 
 @Database(entities = [
-    UpcomingScreenModel::class], version = 1, exportSchema = false)
+    UpcomingScreenModel::class], version = 2, exportSchema = true)
 @TypeConverters(DatabaseTypeConverter::class)
 abstract class FriendListDatabase : RoomDatabase() {
-    abstract fun friendList():FriendListDao
+    abstract fun friendList(): FriendListDao
     companion object{
         @Volatile
         private var InstanceOfDatabase:FriendListDatabase? = null

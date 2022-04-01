@@ -1,4 +1,4 @@
-package com.itech.wisherbirthdaywishapp.database
+package com.itech.wisherbirthdaywishapp.model.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
@@ -6,7 +6,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 
-import com.itech.wisherbirthdaywishapp.model.UpcomingScreenModel
+import com.itech.wisherbirthdaywishapp.model.entities.UpcomingScreenModel
 
 @Dao
 interface FriendListDao {

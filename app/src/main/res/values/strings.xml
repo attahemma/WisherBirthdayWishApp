@@ -20,6 +20,7 @@
     <string name="send_gift">Send Gift</string>
     <string name="price_default_value">$0.56</string>
     <string name="dollar">$</string>
+    <string name="send_a_hot_wish">Send a hot wish...</string>
 
 
 </resources>

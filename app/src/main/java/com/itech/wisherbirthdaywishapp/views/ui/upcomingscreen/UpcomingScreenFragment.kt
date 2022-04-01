@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.itech.wisherbirthdaywishapp.databinding.FragmentUpcomingScreenBinding
-import com.itech.wisherbirthdaywishapp.model.UpcomingScreenModel
 import com.itech.wisherbirthdaywishapp.views.utils.UpcomingScreenClickInterface
 
 class UpcomingScreenFragment : Fragment(), UpcomingScreenClickInterface {
