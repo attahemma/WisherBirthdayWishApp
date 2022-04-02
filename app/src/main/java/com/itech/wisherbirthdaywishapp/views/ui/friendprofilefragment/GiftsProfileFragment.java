@@ -5,8 +5,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -17,24 +17,22 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.itech.wisherbirthdaywishapp.R;
 import com.itech.wisherbirthdaywishapp.model.entities.Gift;
 import com.itech.wisherbirthdaywishapp.database.GiftStore;
-import com.itech.wisherbirthdaywishapp.repositories.GiftRepository;
 import com.itech.wisherbirthdaywishapp.views.utils.ConstantsKt;
 import com.itech.wisherbirthdaywishapp.views.utils.GiftingInterface;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 public class GiftsProfileFragment extends Fragment implements GiftingInterface {
 
     private RecyclerView recyclerView;
     private BottomSheetDialogFragment bottomSheet;
-    private final List<Gift> mGifts = new ArrayList<>();
-    private GiftsProfileViewModel viewModel;
+    private GiftViewModel viewModel;
+    private GiftsProfileAdapter giftsProfileAdapter = null;
 
-
-    public GiftsProfileFragment() {
-    }
+    public GiftsProfileFragment(){}
 
 
     @Override
@@ -47,29 +45,21 @@ public class GiftsProfileFragment extends Fragment implements GiftingInterface {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        viewModel = new ViewModelProvider(this,
-                new GiftsProfileViewModelFactory(new GiftRepository(getActivity().getApplicationContext())))
-                .get(GiftsProfileViewModel.class);
 
         bottomSheet = new GiftBottomSheet();
 
         recyclerView = view.findViewById(R.id.recyclerview);
         recyclerView.setHasFixedSize(true);
 
-        viewModel.getFakeGiftsWithoutWishes().observe(getViewLifecycleOwner(), new Observer<List<Gift>>() {
-            @Override
-            public void onChanged(List<Gift> gifts) {
-                if (!mGifts.isEmpty()) {
-                    mGifts.clear();
-                }
-                mGifts.addAll(gifts);
-//                giftsProfileAdapter = new GiftsProfileAdapter(mGifts, GiftsProfileFragment.this);
-            }
-        });
+        viewModel = new ViewModelProvider(requireActivity()).get(GiftViewModel.class);
 
-        GiftsProfileAdapter giftsProfileAdapter = new GiftsProfileAdapter(GiftStore.INSTANCE.getAvailableGifts(), GiftsProfileFragment.this);
-
+        giftsProfileAdapter = new GiftsProfileAdapter(new GiftsProfileAdapter.GiftDiff());
         recyclerView.setAdapter(giftsProfileAdapter);
+     //   recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
+
+        viewModel.getAllGifts().observe(getViewLifecycleOwner(), gifts -> {
+            giftsProfileAdapter.submitList(gifts);
+        });
     }
 
 
