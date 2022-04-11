@@ -1,33 +1,90 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.WisherBirthdayWishApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.WisherBirthdayWishApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
+
         <item name="colorPrimary">#6666CC</item>
         <item name="colorPrimaryVariant">#6666CC</item>
+
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondary">#6666CC</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorOnSecondary">@color/white</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="android:fontFamily">@font/poppins_regular</item>
+
+        <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialog</item>
+
     </style>
+
+    <style name="ButtonFontRegular">
+        <item name="fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+
+    <style name="ButtonFontBold">
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+
+    <style name="TagFontBold">
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="HeaderFontLarge">
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">48sp</item>
+    </style>
+
+    <style name="HeaderFontMedium">
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">38sp</item>
+    </style>
+
+    <style name="HeaderFontSmall">
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+
     <style name="rectangle_image">
         <item name="cornerSize">10%</item>
     </style>
+
 
     <style name="CurvedTopCard" parent="Widget.MaterialComponents.CardView">
         <item name="cornerSizeTopLeft">10%</item>
         <item name="cornerSizeTopRight">10%</item>
         <item name="cornerFamily">rounded</item>
     </style>
+
+
     <style name="ImageCurvedCard" parent="Widget.MaterialComponents.CardView">
         <item name="cornerSizeTopRight">60dp</item>
         <item name="cornerFamily">rounded</item>
         <item name="cardElevation">10dp</item>
     </style>
+
+
     <style name="calendar_bg_color">
         <item name="background">@drawable/calendar_bg</item>
+    </style>
+
+    <style name="ButtonBordered" parent="Widget.AppCompat.Button.Colored">
+        <item name="background">@drawable/rectangular_transparent</item>
+    </style>
+
+
+    <style name="BottomSheetStyle" parent="Widget.MaterialComponents.BottomSheet.Modal">
+        <item name="background">@drawable/bottom_nav_background</item>
+    </style>
+
+    <style name="CustomBottomSheetDialog" parent="ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
     </style>
 </resources>

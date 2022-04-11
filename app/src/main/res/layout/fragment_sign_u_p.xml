@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".signUP">
+    tools:context=".views.ui.loginFragment.signUP">
 
     <TextView
         android:layout_width="wrap_content"
@@ -123,16 +123,16 @@
 
 
     <Button
+        android:id="@+id/Register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ConfirmPasswordText"
-        android:id="@+id/Register"
         android:layout_marginStart="15dp"
-        android:padding="15dp"
-        android:textSize="16sp"
-        android:text="Register"
-        android:textAllCaps="false"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="15dp"
-        android:layout_marginBottom="15dp"/>
+        android:layout_marginBottom="15dp"
+        android:padding="15dp"
+        android:text="Register"
+        android:textAllCaps="false"
+        android:textSize="16sp" />
 </RelativeLayout>

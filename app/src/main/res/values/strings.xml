@@ -1,8 +1,25 @@
 <resources>
     <string name="app_name">WisherBirthdayWishApp</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+
+    <string name="happy_birthday">Happy\nBirthday</string>
+    <string name="hello">hello</string>
+    <string name="sign_in_as_a_guest">Sign In As A Guest</string>
+    <string name="calendar_icon">Calendar icon</string>
+    <string name="_02_feb">02 Feb</string>
+    <string name="attah_emmanuel">Attah Emmanuel</string>
+    <string name="profile_image">Profile image</string>
+    <string name="hi_there">Hi There!</string>
+    <string name="add_a_friend">Add a friend</string>
+    <string name="permission_denied_message">Access to contact list has been denied and Friend LIst Cannot be loaded,please click button below to grant permission</string>
+    <string name="accept_permission">Accept Permission</string>
+    <string name="select_gift_to_send">Select a gift to send</string>
+    <string name="send_gift">Send Gift</string>
+    <string name="price_default_value">$0.56</string>
+    <string name="dollar">$</string>
+
 
 </resources>
