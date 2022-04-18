@@ -10,7 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.itech.wisherbirthdaywishapp.R
 import com.itech.wisherbirthdaywishapp.databinding.FragmentOverviewBinding
-import com.itech.wisherbirthdaywishapp.model.UpcomingScreenModel
+import com.itech.wisherbirthdaywishapp.model.entities.UpcomingScreenModel
 import com.itech.wisherbirthdaywishapp.views.ui.upcomingscreen.UpcomingScreenAdapter
 import com.itech.wisherbirthdaywishapp.views.utils.UpcomingScreenClickInterface
 

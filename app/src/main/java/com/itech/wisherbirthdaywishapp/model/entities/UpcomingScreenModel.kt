@@ -1,4 +1,4 @@
-package com.itech.wisherbirthdaywishapp.model
+package com.itech.wisherbirthdaywishapp.model.entities
 
 import android.graphics.Bitmap
 import androidx.annotation.DrawableRes

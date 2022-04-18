@@ -1,30 +1,28 @@
 package com.itech.wisherbirthdaywishapp.views.ui.friendprofilefragment
 
-import android.content.Context
 import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.itech.wisherbirthdaywishapp.R
-import com.itech.wisherbirthdaywishapp.database.Gift
+import com.itech.wisherbirthdaywishapp.model.entities.Gift
 import com.itech.wisherbirthdaywishapp.views.utils.GIFT_ITEM_BUNDLE_KEY
+import com.itech.wisherbirthdaywishapp.views.utils.GiftingInterface
 
 class GiftBottomSheet : BottomSheetDialogFragment() {
     companion object {
         const val TAG = "GiftBottomSheet"
     }
 
-    private lateinit var tvGiftPrice: TextView
-    private lateinit var tvGiftName: TextView
+
     private lateinit var imgGiftImage: ImageView
     private var currentGift: Gift? = null
     private lateinit var btnSendGift: Button
+    private lateinit var etWish: EditText
+    private lateinit var giftingInterface: GiftingInterface
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,10 +42,10 @@ class GiftBottomSheet : BottomSheetDialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        tvGiftName = view.findViewById(R.id.tvGiftName)
-        tvGiftPrice = view.findViewById(R.id.tvGiftPrice)
+        giftingInterface = GiftsProfileFragment()
         imgGiftImage = view.findViewById(R.id.imgBottomSheetGift)
         btnSendGift = view.findViewById(R.id.btnSendGift)
+        etWish = view.findViewById(R.id.etWish)
 
         currentGift?.let { gift ->
             populateViews(gift)
@@ -72,12 +70,8 @@ class GiftBottomSheet : BottomSheetDialogFragment() {
 
     private fun populateViews(gift: Gift?) {
         if (gift != null) {
-            tvGiftPrice.text = "$${gift.price.toString()}"
-            tvGiftName.text = gift.name
-            imgGiftImage.setImageResource(gift.resource)
+            imgGiftImage.setImageResource(gift.imageResource)
         } else {
-            tvGiftPrice.text = ""
-            tvGiftName.text = ""
             imgGiftImage.setImageResource(R.drawable.ic_baseline_favorite_24)
         }
     }

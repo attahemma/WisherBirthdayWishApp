@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.itech.wisherbirthdaywishapp.R
 import com.itech.wisherbirthdaywishapp.databinding.UpcomingScreenRecyclerItemBinding
-import com.itech.wisherbirthdaywishapp.model.UpcomingScreenModel
+import com.itech.wisherbirthdaywishapp.model.entities.UpcomingScreenModel
 import com.itech.wisherbirthdaywishapp.views.utils.UpcomingScreenClickInterface
 
 class UpcomingScreenAdapter(

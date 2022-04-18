@@ -67,7 +67,9 @@
         android:id="@+id/fragment_upcoming_screen"
         android:name="com.itech.wisherbirthdaywishapp.views.ui.upcomingscreen.UpcomingScreenFragment"
         android:label="fragment_upcoming_screen"
-        tools:layout="@layout/fragment_upcoming_screen" />
+        tools:layout="@layout/fragment_upcoming_screen" >
+
+    </fragment>
     <fragment
         android:id="@+id/fetchFriendsFromContact"
         android:name="com.itech.wisherbirthdaywishapp.views.ui.fetchFriendFromContactList.FetchFriendsFromContact"
@@ -76,7 +78,11 @@
     <dialog
         android:id="@+id/datePickerDialogFragment"
         android:name="com.itech.wisherbirthdaywishapp.views.ui.friendprofilefragment.DatePickerDialogFragment"
-        android:label="DatePickerDialogFragment" />
+        android:label="DatePickerDialogFragment" >
+        <action
+            android:id="@+id/action_datePickerDialogFragment_to_fragment_upcoming_screen"
+            app:destination="@id/fragment_upcoming_screen" />
+    </dialog>
     <fragment
         android:id="@+id/friendProfileFragment"
         android:name="com.itech.wisherbirthdaywishapp.views.ui.friendprofilefragment.FriendProfileFragment"
